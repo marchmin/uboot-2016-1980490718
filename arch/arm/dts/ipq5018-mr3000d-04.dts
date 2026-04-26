@@ -17,7 +17,7 @@
 	model ="QCA, IPQ5018-mp03.3-v1";
 	compatible = "qca,ipq5018", "qca,ipq5018-mp03.3-v1";
 	machid = <0x8040702>;
-	config_name = "config@mp03.3-m1", "config-mp03.3-v1";
+	config_name = "config@mp03.3-v1", "config-mp03.3-v1";
 
 	aliases {
 		console = "/serial@78AF000";
