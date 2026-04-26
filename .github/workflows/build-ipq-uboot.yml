@@ -25,6 +25,9 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      UPLOAD_BIN_DIR: true
+      UPLOAD_FIRMWARE: false
+      UPLOAD_RELEASE: false
       TZ: Asia/Shanghai
       NODE_VERSION: '24'
       SHOULD_RUN_STEP: "github.event_name != 'workflow_dispatch' || inputs.ipq_type == 'all' || inputs.ipq_type == matrix.ipq_type"
@@ -166,18 +169,3 @@ jobs:
           fi
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create new GitHub Release
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ env.TODAY }}
-          name: v${{ env.TODAY }}
-          body: |
-            Compiled U-Boot IPQ platforms:
-            Build Time：${{ env.FULL_BUILD_TIME }} ${{ env.TZ }}
-            Types：ipq40xx、ipq5018、ipq5332、ipq6018、ipq806x、ipq807x、ipq9574
-          files: artifacts/*
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
