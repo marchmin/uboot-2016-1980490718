@@ -14,10 +14,10 @@
 /dts-v1/;
 #include "ipq5018-soc.dtsi"
 / {
-	model ="QCA, IPQ5018-MP03.3-M1";
-	compatible = "qca,ipq5018", "qca,ipq5018-mp03.3-m1";
+	model ="QCA, IPQ5018-mp03.3-v1";
+	compatible = "qca,ipq5018", "qca,ipq5018-mp03.3-v1";
 	machid = <0x8040802>;
-	config_name = "config@mp03.3-m1", "config-mp03.3-m1";
+	config_name = "config@mp03.3-m1", "config-mp03.3-v1";
 
 	aliases {
 		console = "/serial@78AF000";
